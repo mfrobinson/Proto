@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e06a3fc7-e94c-4456-8835-14f29c535a9c}</ProjectGuid>
+    <RootNamespace>Proto</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir);$(ProjectDir)/Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir);$(ProjectDir)/Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir);$(ProjectDir)/Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir);$(ProjectDir)/Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>;$(ProjectDir);$(ProjectDir)/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Inputs>%(Inputs)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>;$(ProjectDir);$(ProjectDir)/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Inputs>%(Inputs)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Inputs>%(Inputs)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>;$(ProjectDir);$(ProjectDir)/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Inputs>%(Inputs)</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Declarations\Cast\move_cast.h" />
+    <ClInclude Include="Declarations\Data Structures\Dictionary\AbstractDictionary.h" />
+    <ClInclude Include="Declarations\Data Structures\Dictionary\ArrayDictionary.h" />
+    <ClInclude Include="Declarations\Data Structures\Dictionary\has_key.h" />
+    <ClInclude Include="Declarations\Data Structures\Dictionary\has_value.h" />
+    <ClInclude Include="Declarations\Data Structures\Dictionary\ListStoredDictionary.h" />
+    <ClInclude Include="Declarations\Data Structures\List\AbstractList.h" />
+    <ClInclude Include="Declarations\Data Structures\List\ArrayList.h" />
+    <ClInclude Include="Declarations\Data Structures\Pair.h" />
+    <ClInclude Include="Declarations\Data Structures\Stack\AbstractStack.h" />
+    <ClInclude Include="Declarations\Data Structures\Stack\ArrayStack.h" />
+    <ClInclude Include="Declarations\Data Structures\Stack\ListStoredStack.h" />
+    <ClInclude Include="Declarations\Data Structures\Tree\Polymorphic\AbstractListStoredTree.h" />
+    <ClInclude Include="Declarations\Data Structures\Tree\Polymorphic\AbstractTree.h" />
+    <ClInclude Include="Declarations\Data Structures\Tree\Polymorphic\AbstractValuedTree.h" />
+    <ClInclude Include="Declarations\Data Structures\Tree\Polymorphic\HuffmanTree.h" />
+    <ClInclude Include="Declarations\Data Structures\Tree\Polymorphic\ListStoredTree.h" />
+    <ClInclude Include="Declarations\Data Structures\Tree\Polymorphic\NTree.h" />
+    <ClInclude Include="Declarations\Memory Management\between.h" />
+    <ClInclude Include="Declarations\Memory Management\find_last.h" />
+    <ClInclude Include="Declarations\Memory Management\move_memory.h" />
+    <ClInclude Include="Declarations\Memory Management\number_of_digits.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\AbstractArrayPointer.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\AbstractInstancePointer.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\AbstractPointer.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\Array.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\ArrayPointer.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\LazyArray.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\Optional.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\Pointer.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\PolymorphicPointer.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\SharablePointer.h" />
+    <ClInclude Include="Declarations\Memory Management\Pointers\SharablePolymorphicPointer.h" />
+    <ClInclude Include="Declarations\Memory Management\set_memory.h" />
+    <ClInclude Include="Declarations\Memory Management\zero_memory.h" />
+    <ClInclude Include="Include\Cast\move_cast.h" />
+    <ClInclude Include="Include\Cast\ref_cast.h" />
+    <ClInclude Include="Include\Data Structures\Dictionary\AbstractDictionary.h" />
+    <ClInclude Include="Include\Data Structures\Dictionary\ArrayDictionary.h" />
+    <ClInclude Include="Include\Data Structures\Dictionary\has_key.h" />
+    <ClInclude Include="Include\Data Structures\Dictionary\has_value.h" />
+    <ClInclude Include="Include\Data Structures\Dictionary\ListStoredDictionary.h" />
+    <ClInclude Include="Include\Data Structures\List\AbstractList.h" />
+    <ClInclude Include="Include\Data Structures\List\ArrayList.h" />
+    <ClInclude Include="Include\Data Structures\Pair.h" />
+    <ClInclude Include="Include\Data Structures\Stack\AbstractStack.h" />
+    <ClInclude Include="Include\Data Structures\Stack\ArrayStack.h" />
+    <ClInclude Include="Include\Data Structures\Stack\ListStoredStack.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Huffman\HuffmanNode.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractValuedTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ArrayTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\BinaryTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ListStoredTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\NTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Tree.h" />
+    <ClInclude Include="Include\Declarations\Cast\move_cast.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Dictionary\AbstractDictionary.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Dictionary\has_key.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Dictionary\has_value.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Dictionary\ListStoredDictionary.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\List\AbstractList.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\List\ArrayList.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Pair.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Stack\AbstractStack.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Stack\ListStoredStack.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractListStoredTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractValuedTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ArrayTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\BinaryTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\HuffmanTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ListStoredTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\NTree.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\between.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Cloneable.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\find_last.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\move_memory.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\number_of_digits.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\AbstractArrayPointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\AbstractInstancePointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\AbstractPointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\Array.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\ArrayPointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\LazyArray.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\Optional.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\Pointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\PolymorphicPointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\SharablePointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\SharablePolymorphicPointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\set_memory.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\zero_memory.h" />
+    <ClInclude Include="Include\Defines\ConsoleFormatting.h" />
+    <ClInclude Include="Include\Defines\ConsoleText.h" />
+    <ClInclude Include="Include\Defines\Platform.h" />
+    <ClInclude Include="Include\Defines\STRINGIZE.h" />
+    <ClInclude Include="Include\Internet\Http\HttpHeader.h" />
+    <ClInclude Include="Include\Internet\Http\HttpRequest.h" />
+    <ClInclude Include="Include\Internet\Http\HttpResponse.h" />
+    <ClInclude Include="Include\Internet\Server\AbstractServer.h" />
+    <ClInclude Include="Include\Internet\Server\HttpServer.h" />
+    <ClInclude Include="Include\Internet\Server\HttpService.h" />
+    <ClInclude Include="Include\Internet\Socket\AbstractSocket.h" />
+    <ClInclude Include="Include\Internet\Socket\LinuxSocket.h" />
+    <ClInclude Include="Include\Internet\Socket\Socket.h" />
+    <ClInclude Include="Include\Internet\Socket\SocketImplementation.h" />
+    <ClInclude Include="Include\Internet\Socket\Windows\WindowsTCPSocket.h" />
+    <ClInclude Include="Include\Memory Management\between.h" />
+    <ClInclude Include="Include\Memory Management\Cloneable.h" />
+    <ClInclude Include="Include\Memory Management\compare_memory.h" />
+    <ClInclude Include="Include\Memory Management\contains.h" />
+    <ClInclude Include="Include\Memory Management\copy.h" />
+    <ClInclude Include="Include\Memory Management\copy_memory.h" />
+    <ClInclude Include="Include\Memory Management\count.h" />
+    <ClInclude Include="Include\Memory Management\find.h" />
+    <ClInclude Include="Include\Memory Management\find_last.h" />
+    <ClInclude Include="Include\Memory Management\move_memory.h" />
+    <ClInclude Include="Include\Memory Management\number_of_digits.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\AbstractArrayPointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\AbstractInstancePointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\AbstractPointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\Array.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\ArrayPointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\LazyArray.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\Optional.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\Pointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\PolymorphicPointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\SharablePointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\SharablePolymorphicPointer.h" />
+    <ClInclude Include="Include\Memory Management\set_memory.h" />
+    <ClInclude Include="Include\Memory Management\Trackers\ChronologicalTracker.h" />
+    <ClInclude Include="Include\Memory Management\zero_memory.h" />
+    <ClInclude Include="Include\Paradigms\PROTO_COPY_CONSTRUCTOR_PARADIGM.h" />
+    <ClInclude Include="Include\Paradigms\PROTO_COPY_OPERATOR_PARADIGM.h" />
+    <ClInclude Include="Include\Paradigms\PROTO_MOVE_CONSTRUCTOR_PARADIGM.h" />
+    <ClInclude Include="Include\Paradigms\PROTO_MOVE_OPERATOR_PARADIGM.h" />
+    <ClInclude Include="Include\ProtoString.h" />
+    <ClInclude Include="Include\Storage Management\FileReader.h" />
+    <ClInclude Include="Include\Storage Management\FileWriter.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundBlack.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundBlue.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundCyan.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundGreen.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundMagenta.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundRed.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundWhite.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Background\BackgroundYellow.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\BoldFormat.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\DefaultFormat.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundBlack.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundBlue.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundCyan.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundGreen.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundMagenta.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundRed.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundWhite.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundYellow.h" />
+    <ClInclude Include="Include\Windows\Console\Formatting\WindowsConsoleFormat.h" />
+    <ClInclude Include="Testing\Include\Memory Management\Pointers\TestPointer.h" />
+    <ClInclude Include="Testing\Include\Memory Management\TestMemoryManagement.h" />
+    <ClInclude Include="Testing\Include\Test.h" />
+    <ClInclude Include="Testing\Include\TestProto.h" />
+    <ClInclude Include="Testing\Include\TestProtoString.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Internet\Server\HttpServer.cpp" />
+    <ClCompile Include="Src\Internet\Socket\Linux\LinuxSocket.cpp" />
+    <ClCompile Include="Src\Internet\Socket\Windows\WindowsTCPSocket.cpp" />
+    <ClCompile Include="Src\Memory Management\Trackers\ChronologicalTracker.cpp" />
+    <ClCompile Include="Src\ProtoString.cpp" />
+    <ClCompile Include="Src\Storage Management\FileReader.cpp" />
+    <ClCompile Include="Src\Storage Management\FileWriter.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundBlack.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundBlue.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundCyan.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundGreen.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundMagenta.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundRed.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundWhite.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Background\BackgroundYellow.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\BoldFormat.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\DefaultFormat.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundBlack.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundBlue.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundCyan.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundGreen.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundMagenta.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundRed.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundWhite.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundYellow.cpp" />
+    <ClCompile Include="Src\Windows\Console\Formatting\WindowsConsoleFormat.cpp" />
+    <ClCompile Include="Testing\Src\Memory Management\Pointers\TestPointer.cpp" />
+    <ClCompile Include="Testing\Src\Memory Management\TestMemoryManagement.cpp" />
+    <ClCompile Include="Testing\Src\Test.cpp" />
+    <ClCompile Include="Testing\Src\TestProto.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
