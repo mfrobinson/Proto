@@ -1,179 +1,173 @@
 #pragma once
 #include "Declarations/Data Structures/Tree/Polymorphic/NTree.h"
-#include "Memory Management/Pointers/Optional.h"
-#include "Memory Management/Pointers/PolymorphicPointer.h"
 #include "Cast/move_cast.h"
-#include "Memory Management/copy.h"
+#include "Memory Management/Pointers/PolymorphicPointer.h"
+#include "Cast/ref_cast.h"
 
 
 namespace Proto {
 
 	namespace Polymorphic {
 
-		template <size_t N, typename TYPE>
-		NTree<N,TYPE>::NTree() : AbstractValuedTree<TYPE>() {
+		template <size_t N, typename STORED_TYPE>
+		NTree<N, STORED_TYPE>::NTree() {
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		NTree<N, TYPE>::NTree(NTree<N, TYPE>&& other) : AbstractValuedTree<TYPE>(move_cast(other)) {
-			this->_move_(other);
+		template <size_t N, typename STORED_TYPE>
+		NTree<N, STORED_TYPE>::NTree(NTree<N, STORED_TYPE>&& other) : ValuedTree<size_t, STORED_TYPE>(move_cast(other)) {
+			this->_this_move_(other);
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		NTree<N, TYPE>::NTree(const NTree<N, TYPE>& other) : AbstractValuedTree<TYPE>(other) {
-			this->_copy_(other);
+		template <size_t N, typename STORED_TYPE>
+		NTree<N, STORED_TYPE>::NTree(const NTree<N, STORED_TYPE>& other) : ValuedTree<size_t, STORED_TYPE>(other) {
+			this->_this_copy_(other);
 			return;
 		}
-
-		template <size_t N, typename TYPE>
-		NTree<N, TYPE>& NTree<N, TYPE>::operator=(NTree<N, TYPE>&& other) {
+		
+		template <size_t N, typename STORED_TYPE>
+		NTree<N, STORED_TYPE>& NTree<N, STORED_TYPE>::operator=(NTree<N, STORED_TYPE>&& other) {
 			if (&other != this) {
 				this->_cleanup_();
 				this->_super_cleanup_();
-				this->_super_move_(other);
 				this->_move_(other);
 			}
 			return *this;
 		}
-
-		template <size_t N, typename TYPE>
-		NTree<N, TYPE>& NTree<N, TYPE>::operator=(const NTree<N, TYPE>& other) {
+		
+		template <size_t N, typename STORED_TYPE>
+		NTree<N, STORED_TYPE>& NTree<N, STORED_TYPE>::operator=(const NTree<N, STORED_TYPE>& other) {
 			if (&other != this) {
 				this->_cleanup_();
 				this->_super_cleanup_();
-				this->_super_copy_(other);
 				this->_copy_(other);
 			}
 			return *this;
 		}
 
-		template <size_t N, typename TYPE>
-		NTree<N, TYPE>::~NTree() {
+		template <size_t N, typename STORED_TYPE>
+		NTree<N, STORED_TYPE>::~NTree() {
 			this->_cleanup_();
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		NTree<N, TYPE>::NTree(TYPE root_value) : AbstractValuedTree<TYPE>(move_cast(root_value)) {
+		template <size_t N, typename STORED_TYPE>
+		NTree<N, STORED_TYPE>::NTree(STORED_TYPE root) : ValuedTree<size_t, STORED_TYPE>(move_cast(root)) {
 			return;
 		}
 
-		// Add the child to the least height subtree
-		template <size_t N, typename TYPE>
-		void NTree<N, TYPE>::add(Pointer<AbstractTree<TYPE>>& child) {
-			AbstractTree<TYPE>* current = nullptr;
-			AbstractTree<TYPE>* least_height_subtree = nullptr;
-			Pointer<size_t> least_height;
-			for (size_t i = 0; i < this->number_of_children(); ++i) {
-				if (this->child_trees[i] == nullptr) {
-					this->insert(i, child);
-					return;
-				}
-				if (least_height == nullptr) {
-					least_height = Pointer<size_t>(this->child_trees[i]->height());
-					least_height_subtree = this->child_trees[i];
-				}
-				else {
-					if (this->child_trees[i]->height() < *least_height) {
-						*least_height = this->child_trees[i]->height();
-						least_height_subtree = this->child_trees[i];
-					}
-				}
-			}
-			least_height_subtree->add(child);
+		template <size_t N, typename STORED_TYPE>
+		void NTree<N, STORED_TYPE>::add(Pointer<AbstractTree<size_t, STORED_TYPE>>& subtree) {
+
+		}
+		template <size_t N, typename STORED_TYPE>
+		void NTree<N, STORED_TYPE>::insert(size_t position, Pointer<AbstractTree<size_t, STORED_TYPE>>& subtree) {
+
+		}
+		template <size_t N, typename STORED_TYPE>
+		void NTree<N, STORED_TYPE>::remove(const size_t& position) {
+
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		void NTree<N, STORED_TYPE>::children(AbstractDictionary<size_t, AbstractTree<size_t, STORED_TYPE>*>* storage_solution) {
+			this->retrieve_children_to_dictionary(storage_solution);
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		void NTree<N, TYPE>::insert(const size_t position, Pointer<AbstractTree<TYPE>>& subtree) {
-			if (position >= N) {
-				throw std::runtime_error("Cannot add tree as the index is out of bounds!");
-			}
-			if (this->child_trees[position] != nullptr) {
-				this->child_trees[position]->add(subtree);
-				return;
-			}
-			this->child_trees[position] = move_cast(subtree);
+		template <size_t N, typename STORED_TYPE>
+		void NTree<N, STORED_TYPE>::children(AbstractDictionary<size_t, const AbstractTree<size_t, STORED_TYPE>*>* storage_solution) const {
+			this->retrieve_children_to_dictionary(storage_solution);
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		void NTree<N, TYPE>::remove(const size_t index) {
-			if (index >= N) {
-				throw std::runtime_error("Cannot remove tree as the index is out of bounds!");
-			}
-			this->child_trees[index] = (Pointer<AbstractTree<TYPE>>&&)Pointer<AbstractTree<TYPE>>();
-			return;
+		template <size_t N, typename STORED_TYPE>
+		AbstractTree<size_t, STORED_TYPE>* NTree<N, STORED_TYPE>::child(const size_t& position) {
+			return this->retrieve_child(position);
 		}
 
-		template <size_t N, typename TYPE>
-		size_t NTree<N, TYPE>::number_of_children() const noexcept {
-			return N;
+		template <size_t N, typename STORED_TYPE>
+		const AbstractTree<size_t, STORED_TYPE>* NTree<N, STORED_TYPE>::child(const size_t& position) const {
+			return this->retrieve_child(position);
 		}
 
-		template <size_t N, typename TYPE>
-		AbstractTree<TYPE>* NTree<N, TYPE>::child(const size_t index) {
-			if (index >= N) {
-				throw std::runtime_error("Cannot remove tree as the index is out of bounds!");
-			}
-			return this->child_trees[index];
-		}
-
-		template <size_t N, typename TYPE>
-		const AbstractTree<TYPE>* NTree<N, TYPE>::child(const size_t index) const {
-			if (index >= N) {
-				throw std::runtime_error("Cannot remove tree as the index is out of bounds!");
-			}
-			return this->child_trees[index];
-		}
-
-		template <size_t N, typename TYPE>
-		Pointer<AbstractTree<TYPE>> NTree<N, TYPE>::clone() const {
-			return PolymorphicPointer<AbstractTree<TYPE>>(*this);
-		}
-
-		template <size_t N, typename TYPE>
-		inline void NTree<N, TYPE>::_move_(NTree<N, TYPE>& other) {
+		template <size_t N, typename STORED_TYPE>
+		size_t NTree<N, STORED_TYPE>::number_of_children() const noexcept {
+			size_t result = 0;
 			for (size_t i = 0; i < N; ++i) {
-				this->child_trees[i] = move_cast(other.child_trees[i]);
-			}
-			return;
-		}
-
-		template <size_t N, typename TYPE>
-		inline void NTree<N, TYPE>::_copy_(const NTree<N, TYPE>& other) {
-			const AbstractTree<TYPE>* other_child;
-			for (size_t i = 0; i < N; ++i) {
-				other_child = other.child_trees[i];
-				if (other_child != nullptr) {
-					this->child_trees[i] = other_child->clone();
+				if (this->child_trees[i] != nullptr) {
+					++result;
 				}
 			}
+			return result;
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		Pointer<AbstractTree<size_t, STORED_TYPE>> NTree<N, STORED_TYPE>::clone() const {
+			return PolymorphicPointer<AbstractTree<size_t, STORED_TYPE>>(NTree<N, STORED_TYPE>(*this));
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_move_(NTree<N, STORED_TYPE>& other) {
+			this->_super_move_(other);
+			this->_move_(other);
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		inline void NTree<N, TYPE>::_cleanup_() {
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_copy_(const NTree<N, STORED_TYPE>& other) {
+			this->_super_copy_(other);
+			this->_copy_(other);
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		inline void NTree<N, TYPE>::_super_move_(NTree<N, TYPE>& other) {
-			AbstractValuedTree<TYPE>::_move_(other);
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_cleanup_() {
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		inline void NTree<N, TYPE>::_super_copy_(const NTree<N, TYPE>& other) {
-			AbstractValuedTree<TYPE>::_copy_(other);
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_this_move_(NTree<N, STORED_TYPE>& other) {
+			this->child_trees = move_cast(other.child_trees);
 			return;
 		}
 
-		template <size_t N, typename TYPE>
-		inline void NTree<N, TYPE>::_super_cleanup_() {
-			AbstractValuedTree<TYPE>::_cleanup_();
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_this_copy_(const NTree<N, STORED_TYPE>& other) {
+			this->child_trees = other.child_trees;
+			return;
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_super_move_(NTree<N, STORED_TYPE>& other) {
+			ValuedTree<size_t, STORED_TYPE>::_move_(other);
+			return;
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_super_copy_(const NTree<N, STORED_TYPE>& other) {
+			ValuedTree<size_t, STORED_TYPE>::_copy_(other);
+			return;
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		inline void NTree<N, STORED_TYPE>::_super_cleanup_() {
+			ValuedTree<size_t, STORED_TYPE>::_cleanup_();
+			return;
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		inline AbstractTree<size_t, STORED_TYPE>* NTree<N, STORED_TYPE>::retrieve_child(const size_t& position) const {
+			return ref_cast(this->child_trees[position]);
+		}
+
+		template <size_t N, typename STORED_TYPE>
+		template <typename CHILD_TYPE>
+		inline void NTree<N, STORED_TYPE>::retrieve_children_to_dictionary(AbstractDictionary<size_t, CHILD_TYPE>* storage_solution) const {
+			for (size_t i = 0; i < N; ++i) {
+				storage_solution->set(i, ref_cast(this->child_trees[i]));
+			}
 			return;
 		}
 

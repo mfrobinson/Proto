@@ -156,24 +156,6 @@
     <ClInclude Include="Include\Data Structures\Tree\Huffman\HuffmanNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractValuedTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ArrayTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\BinaryTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ListStoredTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\NTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Data Structures\Tree\Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -420,30 +402,6 @@
     <ClInclude Include="Include\Declarations\Data Structures\Stack\ListStoredStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractListStoredTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractValuedTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ArrayTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\BinaryTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\HuffmanTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ListStoredTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\NTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Declarations\Data Structures\Pair.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -502,6 +460,54 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\Memory Management\Cloneable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ListStoredTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ListStoredTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ValuedTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ValuedTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Compression\Huffman\HuffmanNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Compression\Huffman\HuffmanNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Compression\Huffman\HuffmanTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\NTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\NTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\StackArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Memory Management\Pointers\StackArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ArrayTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

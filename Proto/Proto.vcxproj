@@ -217,11 +217,13 @@
     <ClInclude Include="Include\Data Structures\Stack\ListStoredStack.h" />
     <ClInclude Include="Include\Data Structures\Tree\Huffman\HuffmanNode.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractTree.h" />
-    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractValuedTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ArrayTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\BinaryTree.h" />
+    <ClInclude Include="Include\Compression\Huffman\HuffmanNode.h" />
+    <ClInclude Include="Include\Compression\Huffman\HuffmanTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ListStoredTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\NTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ValuedTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Tree.h" />
     <ClInclude Include="Include\Declarations\Cast\move_cast.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Dictionary\AbstractDictionary.h" />
@@ -233,14 +235,12 @@
     <ClInclude Include="Include\Declarations\Data Structures\Pair.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Stack\AbstractStack.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Stack\ListStoredStack.h" />
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractListStoredTree.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractTree.h" />
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractValuedTree.h" />
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ArrayTree.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\BinaryTree.h" />
-    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\HuffmanTree.h" />
+    <ClInclude Include="Include\Declarations\Compression\Huffman\HuffmanNode.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ListStoredTree.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\NTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\ValuedTree.h" />
     <ClInclude Include="Include\Declarations\Memory Management\between.h" />
     <ClInclude Include="Include\Declarations\Memory Management\Cloneable.h" />
     <ClInclude Include="Include\Declarations\Memory Management\find_last.h" />
@@ -257,6 +257,7 @@
     <ClInclude Include="Include\Declarations\Memory Management\Pointers\PolymorphicPointer.h" />
     <ClInclude Include="Include\Declarations\Memory Management\Pointers\SharablePointer.h" />
     <ClInclude Include="Include\Declarations\Memory Management\Pointers\SharablePolymorphicPointer.h" />
+    <ClInclude Include="Include\Declarations\Memory Management\Pointers\StackArray.h" />
     <ClInclude Include="Include\Declarations\Memory Management\set_memory.h" />
     <ClInclude Include="Include\Declarations\Memory Management\zero_memory.h" />
     <ClInclude Include="Include\Defines\ConsoleFormatting.h" />
@@ -296,6 +297,7 @@
     <ClInclude Include="Include\Memory Management\Pointers\PolymorphicPointer.h" />
     <ClInclude Include="Include\Memory Management\Pointers\SharablePointer.h" />
     <ClInclude Include="Include\Memory Management\Pointers\SharablePolymorphicPointer.h" />
+    <ClInclude Include="Include\Memory Management\Pointers\StackArray.h" />
     <ClInclude Include="Include\Memory Management\set_memory.h" />
     <ClInclude Include="Include\Memory Management\Trackers\ChronologicalTracker.h" />
     <ClInclude Include="Include\Memory Management\zero_memory.h" />

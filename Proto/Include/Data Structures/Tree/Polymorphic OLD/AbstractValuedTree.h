@@ -5,7 +5,7 @@
 
 namespace Proto {
 
-	namespace Polymorphic {
+	namespace PolymorphicOLD {
 
 		template <typename TYPE>
 		AbstractValuedTree<TYPE>::AbstractValuedTree() {

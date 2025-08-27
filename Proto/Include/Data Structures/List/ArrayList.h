@@ -51,10 +51,21 @@ namespace Proto {
 
 	template <typename TYPE>
 	void ArrayList<TYPE>::append(TYPE value) {
-		if (this->space_used == this->internal_array.length()) {
-			this->upsize_internal_array();
-		}
+		this->upsize_internal_array_if_needed();
 		this->internal_array[this->space_used++] = move_cast(value);
+		return;
+	}
+
+	template <typename TYPE>
+	void ArrayList<TYPE>::insert(const size_t index, TYPE value) {
+		if (index > this->space_used) {
+			throw std::runtime_error("Index is out of bounds!");
+		}
+		this->upsize_internal_array_if_needed();
+		for (size_t i = this->space_used; i > index; --i) {
+			this->internal_array[i] = move_cast(this->internal_array[i - 1]);
+		}
+		this->internal_array[index] = move_cast(value);
 		return;
 	}
 
@@ -107,6 +118,14 @@ namespace Proto {
 
 	template <typename TYPE>
 	inline void ArrayList<TYPE>::_cleanup_() noexcept {
+		return;
+	}
+
+	template <typename TYPE>
+	inline void ArrayList<TYPE>::upsize_internal_array_if_needed() {
+		if (this->space_used == this->internal_array.length()) {
+			this->upsize_internal_array();
+		}
 		return;
 	}
 

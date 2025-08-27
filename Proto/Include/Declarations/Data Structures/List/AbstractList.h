@@ -33,6 +33,13 @@ namespace Proto {
 		*/
 		virtual void append(TYPE value) = 0;
 		/**
+		* Insert a value into a specified position of the list.
+		* 
+		* @param index The position in which the provided value will reside.
+		* @param value The value to be inserted into the list.
+		*/
+		virtual void insert(const size_t index, TYPE value) = 0;
+		/**
 		* Retrieve a value by an index into the list.
 		*
 		* @param index The index to lookup in the list's values.

@@ -4,7 +4,7 @@
 
 namespace Proto {
 
-	namespace Polymorphic {
+	namespace PolymorphicOLD {
 
 		template <template <typename> typename LIST_TYPE, typename TYPE>
 		class AbstractListStoredTree : public AbstractTree<TYPE> {

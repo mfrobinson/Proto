@@ -5,7 +5,7 @@
 
 namespace Proto {
 
-	namespace Polymorphic {
+	namespace PolymorphicOLD {
 
 		using HuffmanTree = BinaryTree<HuffmanNode>;
 

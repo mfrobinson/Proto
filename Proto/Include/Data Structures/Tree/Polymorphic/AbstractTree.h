@@ -1,60 +1,51 @@
 #pragma once
 #include "Declarations/Data Structures/Tree/Polymorphic/AbstractTree.h"
+#include "Data Structures/Dictionary/ArrayDictionary.h"
 
 
 namespace Proto {
 
 	namespace Polymorphic {
 
-		template <typename TYPE>
-		AbstractTree<TYPE>::~AbstractTree() {
+		template <typename INDEX_TYPE, typename STORED_TYPE>
+		AbstractTree<INDEX_TYPE, STORED_TYPE>::~AbstractTree() {
 			return;
 		}
 
-		template <typename TYPE>
-		size_t AbstractTree<TYPE>::height() const noexcept {
-			size_t number_of_children = this->number_of_children();
-			const AbstractTree<TYPE>* child;
-			size_t greatest_sub_height = 0;
-			for (size_t i = 0; i < number_of_children; ++i) {
-				child = this->child(i);
-				if (child != nullptr) {
-					if (child->height() > greatest_sub_height) {
-						greatest_sub_height = child->height();
-					}
+		template <typename INDEX_TYPE, typename STORED_TYPE>
+		size_t AbstractTree<INDEX_TYPE, STORED_TYPE>::height() const noexcept {
+			ArrayDictionary<INDEX_TYPE, const AbstractTree<INDEX_TYPE, STORED_TYPE>*> children;
+			this->children(&children);
+			size_t height = 0;
+			size_t next_height;
+			for (size_t i = 0; i < children.length(); ++i) {
+				next_height = children.value_at(i)->height();
+				if (next_height > height) {
+					height = next_height;
 				}
 			}
-			return greatest_sub_height + 1;
+			return height + 1;
 		}
 
-		template <typename TYPE>
-		std::ostream& AbstractTree<TYPE>::visualise(std::ostream& os, const String& prefix) const {
+		template <typename INDEX_TYPE, typename STORED_TYPE>
+		std::ostream& AbstractTree<INDEX_TYPE, STORED_TYPE>::visualise(std::ostream& os, const String& prefix) const {
+			ArrayDictionary<INDEX_TYPE, const AbstractTree<INDEX_TYPE, STORED_TYPE>*> children;
+			this->children(&children);
+			size_t number_of_children = children.length();
 			os << this->value() << "\n";
-			size_t number_of_children = this->number_of_children();
-			const AbstractTree<TYPE>* child;
+			const AbstractTree<INDEX_TYPE, STORED_TYPE>* child;
 			for (size_t i = 0; i < number_of_children; ++i) {
 				os << prefix << "|-";
-				child = this->child(i);
-				if (child != nullptr) {
-					if (i + 1 < number_of_children) {
-						child->visualise(os, prefix + "| ");
-					}
-					else {
-						child->visualise(os, prefix + "  ");
-					}
+				child = children.value_at(i);
+				if (i + 1 < number_of_children) {
+					child->visualise(os, prefix + "| ");
 				}
 				else {
-					os << "\n";
+					child->visualise(os, prefix + "  ");
 				}
 			}
 			return os;
 		}
 
-		template <typename TYPE>
-		std::ostream& operator<<(std::ostream& os, const AbstractTree<TYPE>& tree) {
-			return tree.visualise(os);
-		}
-
 	}
-
 }
