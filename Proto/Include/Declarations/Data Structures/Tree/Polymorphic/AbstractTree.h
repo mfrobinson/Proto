@@ -1,9 +1,9 @@
 #pragma once
 #include "Memory Management/Cloneable.h"
 #include "ProtoString.h"
-#include <iostream>
 #include "Memory Management/Pointers/Pointer.h"
 #include "Data Structures/Dictionary/AbstractDictionary.h"
+#include <iostream>
 
 
 namespace Proto {
@@ -36,6 +36,9 @@ namespace Proto {
 		protected:
 		private:
 		};
+
+		template <typename INDEX_TYPE, typename STORED_TYPE>
+		std::ostream& operator<<(std::ostream& os, const AbstractTree<INDEX_TYPE, STORED_TYPE>& tree);
 
 	}
 

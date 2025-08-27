@@ -47,5 +47,10 @@ namespace Proto {
 			return os;
 		}
 
+		template <typename INDEX_TYPE, typename STORED_TYPE>
+		std::ostream& operator<<(std::ostream& os, const AbstractTree<INDEX_TYPE, STORED_TYPE>& tree) {
+			return tree.visualise(os);
+		}
+
 	}
 }
