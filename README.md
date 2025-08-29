@@ -4,18 +4,13 @@ The Proto Library is designed to provide efficient functionality while maintaini
 
 ## Installation
 
-Clone the repo:
+Clone the repository:
 
-```bash
-git clone https://github.com/mfrobinson/Proto.git
-cd Proto
-```
-
-Or use Visual Studio's built in Git interface to clone the repo.
+This repository is currently designed to be used with Visual Studio. Please use Visual Studio's Git interface to clone the repository, and use it with other projects.
 
 ## Usage
 
-Compile the library and use with other projects
+The cloned Visual Studio project can be included into other projects to be used.
 
 ## Features
 
