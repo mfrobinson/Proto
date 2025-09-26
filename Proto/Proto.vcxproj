@@ -211,11 +211,18 @@
     <ClInclude Include="Include\Data Structures\Dictionary\ListStoredDictionary.h" />
     <ClInclude Include="Include\Data Structures\List\AbstractList.h" />
     <ClInclude Include="Include\Data Structures\List\ArrayList.h" />
+    <ClInclude Include="Include\Data Structures\List\LinkedList.h" />
     <ClInclude Include="Include\Data Structures\Pair.h" />
     <ClInclude Include="Include\Data Structures\Stack\AbstractStack.h" />
     <ClInclude Include="Include\Data Structures\Stack\ArrayStack.h" />
     <ClInclude Include="Include\Data Structures\Stack\ListStoredStack.h" />
     <ClInclude Include="Include\Data Structures\Tree\Huffman\HuffmanNode.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\AbstractTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\AbstractValuedTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\ArrayTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\BinaryTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\ListStoredTree.h" />
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\NTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\AbstractTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ArrayTree.h" />
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\BinaryTree.h" />
@@ -232,9 +239,18 @@
     <ClInclude Include="Include\Declarations\Data Structures\Dictionary\ListStoredDictionary.h" />
     <ClInclude Include="Include\Declarations\Data Structures\List\AbstractList.h" />
     <ClInclude Include="Include\Declarations\Data Structures\List\ArrayList.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\List\LinkedList.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Pair.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Stack\AbstractStack.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Stack\ListStoredStack.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\AbstractListStoredTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\AbstractTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\AbstractValuedTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\ArrayTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\BinaryTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\HuffmanTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\ListStoredTree.h" />
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\NTree.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\AbstractTree.h" />
     <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic\BinaryTree.h" />
     <ClInclude Include="Include\Declarations\Compression\Huffman\HuffmanNode.h" />
@@ -327,11 +343,6 @@
     <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundWhite.h" />
     <ClInclude Include="Include\Windows\Console\Formatting\Foreground\ForegroundYellow.h" />
     <ClInclude Include="Include\Windows\Console\Formatting\WindowsConsoleFormat.h" />
-    <ClInclude Include="Testing\Include\Memory Management\Pointers\TestPointer.h" />
-    <ClInclude Include="Testing\Include\Memory Management\TestMemoryManagement.h" />
-    <ClInclude Include="Testing\Include\Test.h" />
-    <ClInclude Include="Testing\Include\TestProto.h" />
-    <ClInclude Include="Testing\Include\TestProtoString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Internet\Server\HttpServer.cpp" />
@@ -360,10 +371,9 @@
     <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundWhite.cpp" />
     <ClCompile Include="Src\Windows\Console\Formatting\Foreground\ForegroundYellow.cpp" />
     <ClCompile Include="Src\Windows\Console\Formatting\WindowsConsoleFormat.cpp" />
-    <ClCompile Include="Testing\Src\Memory Management\Pointers\TestPointer.cpp" />
-    <ClCompile Include="Testing\Src\Memory Management\TestMemoryManagement.cpp" />
-    <ClCompile Include="Testing\Src\Test.cpp" />
-    <ClCompile Include="Testing\Src\TestProto.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Build.sh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

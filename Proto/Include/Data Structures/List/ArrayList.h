@@ -66,6 +66,7 @@ namespace Proto {
 			this->internal_array[i] = move_cast(this->internal_array[i - 1]);
 		}
 		this->internal_array[index] = move_cast(value);
+		++this->space_used;
 		return;
 	}
 

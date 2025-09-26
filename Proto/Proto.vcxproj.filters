@@ -357,21 +357,6 @@
     <ClInclude Include="Include\ProtoString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Testing\Include\Memory Management\Pointers\TestPointer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Testing\Include\Memory Management\TestMemoryManagement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Testing\Include\Test.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Testing\Include\TestProto.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Testing\Include\TestProtoString.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Cast\ref_cast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -510,6 +495,54 @@
     <ClInclude Include="Include\Data Structures\Tree\Polymorphic\ArrayTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Data Structures\List\LinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\AbstractTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\AbstractValuedTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\ArrayTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\ListStoredTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Data Structures\Tree\Polymorphic OLD\NTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\List\LinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\AbstractListStoredTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\AbstractTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\AbstractValuedTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\ArrayTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\HuffmanTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\ListStoredTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Declarations\Data Structures\Tree\Polymorphic OLD\NTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Internet\Server\HttpServer.cpp">
@@ -590,17 +623,8 @@
     <ClCompile Include="Src\ProtoString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Testing\Src\Memory Management\Pointers\TestPointer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Testing\Src\Memory Management\TestMemoryManagement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Testing\Src\Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Testing\Src\TestProto.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Build.sh" />
   </ItemGroup>
 </Project>
