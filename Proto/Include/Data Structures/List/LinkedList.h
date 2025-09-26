@@ -108,13 +108,14 @@ namespace Proto {
 			previous = *target;
 			target = &((*target)->next);
 		}
+		TYPE result = move_cast((*target)->value);
 		Pointer<Node> after = move_cast((*target)->next);
 		*target = move_cast(after);
 		--this->number_of_nodes;
 		if (index == this->number_of_nodes) {
 			this->last = previous;
 		}
-		return TYPE();
+		return result;
 	}
 
 	template <typename TYPE>
